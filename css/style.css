@@ -20,3 +20,11 @@ input{
     border-radius: 5px;
     font-weight: 600;
 }
+
+
+/* media query for mobile divices */
+@media only screen and (max-width:688px) {
+    .img-fluid{
+        height: 400px;
+    }
+}
