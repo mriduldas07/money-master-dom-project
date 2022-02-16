@@ -27,7 +27,7 @@
                               <h5>Income :</h5>
                             </div>
                             <div class="col col-lg-5">
-                              <input type="text" class="input">
+                              <input id="income-input" type="text" class="input">
                             </div>
                           </div>
                     <h4 class="py-4">Expenses</h4>
@@ -37,7 +37,7 @@
                               <h5>Food :</h5>
                             </div>
                             <div class="col col-lg-5">
-                              <input type="text" class="input">
+                              <input id="food-input" type="text" class="input">
                             </div>
                           </div>
                     </div>
@@ -47,7 +47,7 @@
                               <h5>Rent :</h5>
                             </div>
                             <div class="col col-lg-5">
-                              <input type="text" class="input">
+                              <input id="rent-input" type="text" class="input">
                             </div>
                           </div>
                     </div>
@@ -57,35 +57,38 @@
                               <h5>Clothes :</h5>
                             </div>
                             <div class="col col-lg-5">
-                              <input type="text" class="input">
+                              <input id="clothes-input" type="text" class="input">
                             </div>
                           </div>
                     </div>
                     <div class="mt-4">
-                        <span class="button">Calculate</span>
+                        <span onclick="calculationMoney()" class="button">Calculate</span>
                     </div>
                     <div class="mt-4">
-                        <h4>Total Expenses: 5500</h4>
+                        <h4>Total Expenses: <span id="expencess-total">5500</span> </h4>
                     </div>
                     <div class="mt-4">
-                        <h4>Balance: 4500</h4>
+                        <h4>Balance: <span id="balance-total">4500</span> </h4>
                     </div>
                     <div class="row row-cols-4 justify-content-md-center my-4">
                         <div class="col col-lg-2">
                           <h4>Save:</h4>
                         </div>
                         <div class="col-md-auto">
-                          <input type="text" style="width: 100px;">
+                          <input id="saving-input" type="text" style="width: 100px;">
                         </div>
                         <div class="col col-lg-1 mt-2">
                           <p class="fs-5 fw-bold">%</p>
                         </div>
                         <div class="col col-lg-3 mt-2">
-                          <span class="button">save</span>
+                          <span onclick="saveMoney()" class="button">save</span>
                         </div>
                   </div>
+                  <div class="mt-3">
+                      <h4>Saving Amount: <span id="saving-total">2000</span> </h4>
+                  </div>
                   <div class="mt-3 pb-5">
-                      <h4>Saving Amount: 2000</h4>
+                      <h4>Remaining Balance: <span id="remaining-total">2500</span></h4>
                   </div>
                 </div>
 
