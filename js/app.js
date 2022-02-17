@@ -59,9 +59,32 @@ document.getElementById("calculate-btn").addEventListener('click',function () {
 //saving part
 
 document.getElementById('save-btn').addEventListener('click',function () {
+    const incomeInput = document.getElementById('income-input');
     const savingInput = document.getElementById('saving-input');
+    let incomeAmount = parseFloat(incomeInput.value);
 
     let savingParcentage = parseFloat(savingInput.value);
 
-    let 
+    let saving = incomeAmount / 100 * savingParcentage;
+
+    if (isNaN(incomeAmount) || incomeAmount < 0) {
+        incomeInput.value='';
+        return alert('Input valid number in income box');
+    }
+    else if (isNaN(savingParcentage) || savingParcentage < 0) {
+        savingInput.value='';
+        return alert('Input valid number in saving box');
+    }
+    else{
+        let savingAmount = document.getElementById('saving-total');
+    let previousSaving = parseFloat(savingAmount.innerText);
+    savingAmount.innerText = previousSaving + saving;
+    }
+
+
+
+
+    //clear
+    incomeInput.value='';
+    savingInput.value='';
 })
