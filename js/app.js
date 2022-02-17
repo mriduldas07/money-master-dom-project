@@ -8,21 +8,32 @@ document.getElementById("calculate-btn").addEventListener('click',function () {
     let foodAmount = parseFloat(foodInput.value);
     let rentAmount = parseFloat(rentInput.value);
     let clothesAmount = parseFloat(clothesInput.value);
+    let expencess = foodAmount + rentAmount + clothesAmount;
 
     if (isNaN(incomeAmount) || incomeAmount < 0) {
-        return alert('Input valid number');
+        incomeInput.value='';
+        return alert('Input valid number in income box');
     }
     else if (isNaN(foodAmount) || foodAmount < 0) {
-        return alert('Input valid number');
+        foodInput.value='';
+        return alert('Input valid number in food box');
     }
     else if (isNaN(rentAmount) || rentAmount < 0) {
-        return alert('Input valid number');
+        rentInput.value='';
+        return alert('Input valid number in rent box');
     }
     else if (isNaN(clothesAmount) || clothesAmount < 0) {
-        return alert('Input valid number');
+        clothesInput.value='';
+        return alert('Input valid number cloth box');
     }
-    else{
-        let expencess = foodAmount + rentAmount + clothesAmount; 
+    else if (incomeAmount < expencess) {
+        incomeInput.value='';
+        foodInput.value='';
+        rentInput.value='';
+        clothesInput.value='';
+        return alert("Your expences can't larger than your income!!!")
+    }
+    else{ 
     
     let totalExpencess = document.getElementById('expencess-total');
     let previousExpencess = parseFloat(totalExpencess.innerText);
@@ -41,4 +52,16 @@ document.getElementById("calculate-btn").addEventListener('click',function () {
     foodInput.value='';
     rentInput.value='';
     clothesInput.value='';
+})
+
+
+
+//saving part
+
+document.getElementById('save-btn').addEventListener('click',function () {
+    const savingInput = document.getElementById('saving-input');
+
+    let savingParcentage = parseFloat(savingInput.value);
+
+    let 
 })
